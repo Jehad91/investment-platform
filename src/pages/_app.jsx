@@ -1,4 +1,5 @@
 import 'antd/dist/reset.css'
+import '../style/global.css'
 
 import { ConfigProvider } from 'antd'
 

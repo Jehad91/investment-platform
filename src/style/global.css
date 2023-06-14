@@ -2,3 +2,11 @@
 .ant-table-thead>tr>th {
   padding: 16px 5px !important;
 }
+@media (max-width: 545px) {
+  .ant-table-thead>tr>th {
+    font-size: 13px;
+  }
+  .ant-tag {
+    font-size: 10px;
+  }
+}

@@ -100,9 +100,9 @@ const FormsTable = () => {
         ),
         expandedRowRender: (record) => (
           <Form onFinish={(e) => onFinish(e, record.key)}>
-            <Space direction='vertical' style={{ width: '50%' }}>
+            <Space className='form-container' direction='vertical'>
               <Space direction='vertical' style={{ width: '100%' }}>
-                <Title level={5}>Custodian Details</Title>
+                <Title level={5} className='form-title'>Custodian Details</Title>
                 <Form.Item
                   label="First Name"
                   name="firstName"
@@ -129,7 +129,7 @@ const FormsTable = () => {
                 </Form.Item>
               </Space>
               <Space direction='vertical' style={{ width: '100%' }}>
-                <Title level={5}>Other Information</Title>
+                <Title level={5} className='form-title'>Other Information</Title>
                 <Form.Item
                   label="Phone Number"
                   name="phoneNumber"
@@ -156,7 +156,7 @@ const FormsTable = () => {
                 </Form.Item>
               </Space>
               <Space direction='vertical' style={{ width: '100%' }}>
-                <Title level={5}>Certification</Title>
+                <Title level={5} className='form-title'>Certification</Title>
                 <Form.Item
                   label="Certification"
                   name="certification"

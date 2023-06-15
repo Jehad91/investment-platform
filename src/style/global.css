@@ -1,12 +1,21 @@
+.form-container {
+  width: 50%
+}
 .ant-table-tbody>tr>td,
 .ant-table-thead>tr>th {
   padding: 16px 5px !important;
 }
 @media (max-width: 545px) {
+  .form-container {
+  width: 100%
+}
   .ant-table-thead>tr>th {
     font-size: 13px;
   }
   .ant-tag {
     font-size: 10px;
+  }
+  .form-title {
+    font-size: 13px;
   }
 }

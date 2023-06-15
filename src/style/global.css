@@ -7,8 +7,8 @@
 }
 @media (max-width: 545px) {
   .form-container {
-  width: 100%
-}
+    width: 100%
+  }
   .ant-table-thead>tr>th {
     font-size: 13px;
   }

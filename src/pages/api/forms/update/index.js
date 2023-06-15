@@ -10,11 +10,6 @@ export default function handler(req, res) {
     try {
       const data = fs.readFileSync(filePath, 'utf-8')
       const jsonData = JSON.parse(data)
-      // const updatedData = jsonData.find((data) => data.age === +age)
-      // updatedData.name = formData.name
-      // updatedData.age = formData.age
-      console.log(formData, 'form')
-      console.log(key, 'key')
       jsonData.map((data) => {
         if (data.key === key) {
           data.firstName = formData.firstName

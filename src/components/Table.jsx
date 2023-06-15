@@ -48,11 +48,6 @@ const columns = [
 
 const FormsTable = () => {
   const [data, setData] = useState([])
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [phoneNumber, setPhoneNumber] = useState('')
-  const [age, setAge] = useState(0)
-  const [certification, setCertification] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,9 +77,15 @@ const FormsTable = () => {
       message.error('Error updating data')
     }
   }
-  const onFinish = (e, key) => {
-    e.preventDefault()
-    updateData(key, { firstName, lastName, phoneNumber, age, certification })
+  const onFinish = (value, key) => {
+    console.log(value)
+    updateData(key, {
+      firstName: value.firstName,
+      lastName: value.lastName,
+      phoneNumber: value.phoneNumber?.match(/\d/g).join(''),
+      age: value.age?.match(/\d/g).join(''),
+      certification: value.certification,
+    })
   }
   return (
     <div>
@@ -112,7 +113,6 @@ const FormsTable = () => {
                     placeholder='First Name'
                     value={record.firstName}
                     defaultValue={record.firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
                   />
                 </Form.Item>
                 <Form.Item
@@ -125,7 +125,6 @@ const FormsTable = () => {
                     placeholder='Last Name'
                     value={record.lastName}
                     defaultValue={record.lastName}
-                    onChange={(e) => setLastName(e.target.value)}
                   />
                 </Form.Item>
               </Space>
@@ -141,7 +140,6 @@ const FormsTable = () => {
                     placeholder='Phone Number'
                     value={record.phoneNumber}
                     defaultValue={record.phoneNumber}
-                    onChange={(e) => setPhoneNumber(+e.target.value)}
                   />
                 </Form.Item>
                 <Form.Item
@@ -154,7 +152,6 @@ const FormsTable = () => {
                     placeholder='Your Age'
                     value={record.age}
                     defaultValue={record.age}
-                    onChange={(e) => setAge(e.target.value)}
                   />
                 </Form.Item>
               </Space>
@@ -170,7 +167,6 @@ const FormsTable = () => {
                     placeholder='Certification'
                     value={record.certification}
                     defaultValue={record.certification}
-                    onChange={(e) => setCertification(e.target.value)}
                   />
                 </Form.Item>
               </Space>
